@@ -22,7 +22,9 @@ app.use((req, res, next) => {
     var log = `${now}: ${req.method} ${req.url}`;
     console.log(log);
     fs.appendFile('server.log', log + '\n', (err) => {
-        console.log("Could not append to log file");
+        if (err) {
+            console.log("Could not append to log file");
+        }
     });
     next();
 });
@@ -54,6 +56,10 @@ app.get('/', (req, res) => {
     res.send({
         errorMessage: 'bad things'
     });
+}).get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    })
 });
 
 // Start the fucker up!
