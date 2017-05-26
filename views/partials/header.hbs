@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{{pageTitle}}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Metamorphous" rel="stylesheet">
     <style type="text/css">
         * {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: Metamorphous, Open Sans, Helvetica, Arial, sans-serif;
             background-color: #505050;
             color: white;
         }
@@ -17,11 +19,29 @@
 
         header {
             margin: 0;
-            padding: 0 30px;
+            padding: 0;
+        }
+
+        header > div:nth-child(1) {
+            position: relative;
+            top: -50px;
+        }
+
+        header > div:nth-child(2) {
+            float: right;
+            position: absolute;
+            right: 1em;
+            top: 1.5em;
         }
 
         footer {
             font-size: 10pt;
+        }
+
+        img {
+            position: relative;
+            top: 40px;
+            display: inline;
         }
 
         .content {
@@ -31,8 +51,8 @@
 </head>
 <body>
     <header>
-        <div><h1>{{pageTitle}}</h1></div>
-        <div style="float: right; position: absolute; right: 1em; top: 1.5em;">
+        <div><h1><img alt="torch" src="./torch.gif"/>{{pageTitle}}<img alt="torch" src="./torch.gif"/></h1></div>
+        <div>
             <a href='/'>Home</a> | <a href='/projects'>Projects</a> | <a href='/about'>About</a>
         </div>
     </header>
